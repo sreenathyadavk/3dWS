@@ -15,12 +15,12 @@ const vercettiFont = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com/'),
-  title: "Mohit Virli ✌️",
-  description: "A frontend developer by profession, a creative at heart.",
-  keywords: "Mohit Virli, Frontend Engineer, React Developer, Three.js, Creative Developer, Web Development, Angular, JavaScript, TypeScript, Portfolio",
-  authors: [{ name: "Mohit Virli" }],
-  creator: "Mohit Virli",
-  publisher: "Mohit Virli",
+  title: "Sreenath Yadav ✌️",
+  description: "Full Stack Developer.",
+  keywords: "Sreenath Yadav, Full Stack Developer, React Developer, Three.js, Web Development, Java, Next.js, Portfolio",
+  authors: [{ name: "Sreenath Yadav" }],
+  creator: "Sreenath Yadav",
+  publisher: "Sreenath Yadav",
   formatDetection: {
     email: false,
     address: false,
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
-    siteName: "Mohit Virli's Portfolio",
+    title: "Sreenath Yadav - Full Stack Developer",
+    description: "Full Stack Developer solving business problems.",
+    siteName: "Sreenath Yadav's Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Virli - Frontend Engineer",
-    description: "Frontend engineer by profession, creative at heart.",
+    title: "Sreenath Yadav - Full Stack Developer",
+    description: "Full Stack Developer solving business problems.",
   },
   verification: {
     google: "GsRYY-ivL0F_VKkfs5KAeToliqz0gCrRAJKKmFkAxBA",
