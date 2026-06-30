@@ -17,12 +17,29 @@ Checkout the live version at [https://clevir.li/](https://clevir.li/)
 - Zustand
 - Tailwind
 
-## Preview
-Some of the sample images from the app. Better to check it out live!
+## Deploying on Render (Static Site)
 
-<img width="1242" alt="image" src="https://github.com/user-attachments/assets/877b0685-8d86-4f8b-b123-f3cc17d46fc7" />
-<img width="1241" alt="image" src="https://github.com/user-attachments/assets/09a92647-1781-4124-ba3f-1d6fb66f6974" />
-<img width="1241" alt="image" src="https://github.com/user-attachments/assets/a15017f4-f1f2-459e-b895-b3c14703635b" />
-<img width="1428" height="830" alt="image" src="https://github.com/user-attachments/assets/9f78c2e8-991c-4507-8ffb-72e61513c031" />
+Since this app is configured for static export (`output: 'export'`), it can be hosted on Render as a **Static Site** for free.
+
+To host it:
+
+1. **Create a New Static Site** on Render:
+   - Connect your GitHub repository (`3dWS`).
+
+2. **Configure Settings**:
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `out`
+
+3. **Deploy**:
+   - Render will build the app, export the static files to the `out/` directory, and deploy them.
+
+## Local Execution
+
+To run the application locally:
+```bash
+npm install
+npm run build
+npm run start
+```
 
 
