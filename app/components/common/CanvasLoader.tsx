@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { AdaptiveDpr, Preload, ScrollControls, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
-import { Suspense, useRef, useSyncExternalStore } from "react";
+import { Suspense, useRef, useSyncExternalStore, useEffect } from "react";
 import { isMobile } from "react-device-detect";
 
 import { useThemeStore } from "@stores";
@@ -21,6 +21,17 @@ const CanvasLoader = (props: { children: React.ReactNode }) => {
   const backgroundColor = useThemeStore((state) => state.theme.color);
   const { progress } = useProgress();
   const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
+
+  useEffect(() => {
+    const handleRejection = (event: PromiseRejectionEvent) => {
+      if (event.reason && event.reason.message && event.reason.message.includes('ANGLE_instanced_arrays')) {
+        event.preventDefault(); // Prevent default console error and potential app crash
+        console.warn('WebGL SDF generation failed due to browser privacy settings (e.g. Brave Shields). Text might degrade or not render.');
+      }
+    };
+    window.addEventListener('unhandledrejection', handleRejection);
+    return () => window.removeEventListener('unhandledrejection', handleRejection);
+  }, []);
 
   const canvasStyle: React.CSSProperties = {
     position: "absolute",
