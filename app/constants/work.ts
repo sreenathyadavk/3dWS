@@ -35,6 +35,7 @@ export const WORK_TIMELINE: WorkTimelinePoint[] = [
     year: new Date().toLocaleDateString('default', { year: 'numeric' }),
     title: 'Let\'s Build',
     subtitle: '↓ Contact Me',
+    url: 'mailto:sreenathyadavk@gmail.com',
     position: 'right',
   }
 ]

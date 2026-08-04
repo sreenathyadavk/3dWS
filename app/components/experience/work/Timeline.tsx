@@ -1,4 +1,4 @@
-import { Box, Edges, Line, Text, TextProps } from "@react-three/drei";
+import { Box, Edges, Line, Text, TextProps, Html } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { usePortalStore } from "@stores";
 import gsap from "gsap";
@@ -49,12 +49,30 @@ const TimelinePoint = ({ point, diff }: { point: WorkTimelinePoint, diff: number
             {point.year}
           </Text>
           <group position={[0, -0.5, 0]}>
-            <Text {...titleProps} fontSize={0.6} maxWidth={3} position={[0, -diff / 2, 0]}>
+            <Text {...titleProps} fontSize={0.6} maxWidth={4} position={[0, -diff / 2, 0]}>
               {point.title}
             </Text>
-            <Text {...textProps} fontSize={0.2} position={[0, -0.4 - diff, 0]}>
-              {point.subtitle}
-            </Text>
+            <group position={[0, -0.8 - diff, 0]}>
+              <Text 
+                {...textProps} 
+                fontSize={0.25} 
+              >
+                {point.subtitle}
+              </Text>
+              {point.url && (
+                <Html transform center zIndexRange={[100, 0]}>
+                  <a 
+                    href={point.url} 
+                    style={{ 
+                      display: 'block', 
+                      width: '200px', 
+                      height: '50px', 
+                      cursor: 'pointer' 
+                    }} 
+                  />
+                </Html>
+              )}
+            </group>
           </group>
         </group>
       </group>
