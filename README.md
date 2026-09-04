@@ -1,5 +1,3 @@
-# sreenath.github.io
-Hello there! I'm Sreenath, frontend engineer by profession, a creative at heart.
 
 This is the updated version of my personal website which is now in 3D. LFG!
 
